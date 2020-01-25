@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import CharacterCard from "./CharacterCard";
 import axios from "axios";
 
 export default function CharacterList() {
@@ -7,7 +8,7 @@ export default function CharacterList() {
 
   useEffect(() => {
     axios
-      .get("https://rickandmortyapi.com/documentation/")
+      .get("https://rickandmortyapi.com/api/character/")
       .then(res => {
         setCharacter(res.data.results);
         console.log(res.data.results);
@@ -20,16 +21,10 @@ export default function CharacterList() {
   }, []);
 
   return (
-    <section className="character-list">
-      <div>
-        {character.map(char => {
-          return (
-            <div className="char-card">
-              <h1>{char.name}</h1>
-            </div>
-          );
-        })}
-      </div>
+    <section className="character-list grid-view">
+      {character.map(char => {
+        return <CharacterCard key={char.id} character={char} />;
+      })}
     </section>
   );
 }

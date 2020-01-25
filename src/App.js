@@ -12,6 +12,7 @@ export default function App() {
       <div className="nav">
         <Route exact path="/characters" component={CharacterList} />
         <Route exact path="/" component={WelcomePage} />
+        <CharacterList />
       </div>
     </main>
   );
