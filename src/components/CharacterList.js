@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
   const [character, setCharacter] = useState([]);
-  const [search, setSearch] = useState("");
 
   useEffect(() => {
     axios
-      .get("https://rickandmortyapi.com/documentation/?name=${search}")
+      .get("https://rickandmortyapi.com/documentation/")
       .then(res => {
         setCharacter(res.data.results);
         console.log(res.data.results);
@@ -17,12 +17,19 @@ export default function CharacterList() {
       });
     // TODO: Add API Request here - must run in `useEffect`
     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
-  }, [search]);
+  }, []);
 
   return (
     <section className="character-list">
-      <div></div>
-      <h2>TODO: `array.map()` over your state here!</h2>
+      <div>
+        {character.map(char => {
+          return (
+            <div className="char-card">
+              <h1>{char.name}</h1>
+            </div>
+          );
+        })}
+      </div>
     </section>
   );
 }
