@@ -3,7 +3,6 @@ import CharacterCard from "./CharacterCard";
 
 export default function SearchForm({ onSearch, charName, setCharName }) {
   const handleChange = event => {
-    event.preventDefault();
     setCharName(event.target.value);
     console.log(charName);
   };

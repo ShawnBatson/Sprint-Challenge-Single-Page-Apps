@@ -4,7 +4,6 @@ import CharacterList from "./components/CharacterList";
 import axios from "axios";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import WelcomePage from "./components/WelcomePage";
-import CharacterCard from "./components/CharacterCard";
 import LocationsList from "./components/LocationsList";
 import SearchForm from "./components/SearchForm";
 

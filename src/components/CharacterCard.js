@@ -4,9 +4,9 @@ import styled from "styled-components";
 const Card = styled.div`
   border: 1px solid black;
   width: 30%;
-  margin: 1%;
+  margin: 2%;
   min-height: 150px;
-  box-shadow: 10px, 20px;
+  box-shadow: 10px 20px;
 `;
 
 export default function CharacterCard(props) {
