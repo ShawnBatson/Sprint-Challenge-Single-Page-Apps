@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import WelcomePage from "./components/WelcomePage";
 import LocationsList from "./components/LocationsList";
 import SearchForm from "./components/SearchForm";
+import Navigation from "./components/Nav";
 
 export default function App() {
   const [name, setName] = useState("");
@@ -29,6 +30,7 @@ export default function App() {
 
   return (
     <main>
+      <Navigation />
       <Header />
       <div className="nav">
         <Route exact path="/" component={WelcomePage} />
