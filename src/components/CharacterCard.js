@@ -6,6 +6,7 @@ const Card = styled.div`
   width: 30%;
   margin: 1%;
   min-height: 150px;
+  box-shadow: 10px, 20px;
 `;
 
 export default function CharacterCard(props) {

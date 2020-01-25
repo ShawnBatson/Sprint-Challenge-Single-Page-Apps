@@ -20,7 +20,7 @@ export default function App() {
         setSearch(response.data.result);
       })
       .catch(err => {
-        console.log(err);
+        console.log("You have encoutnered an error:", err);
       });
   };
 
