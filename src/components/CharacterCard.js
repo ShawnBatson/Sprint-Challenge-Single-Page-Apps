@@ -11,7 +11,7 @@ const Card = styled.div`
 export default function CharacterCard(props) {
   return (
     <Card>
-      <h1>{props.name}</h1>
+      <h1>Name:{props.name}</h1>
       <img src={`${props.image}`} />
       <div>{props.species}</div>
     </Card>

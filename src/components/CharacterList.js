@@ -11,19 +11,23 @@ export default function CharacterList() {
       .get("https://rickandmortyapi.com/api/character/")
       .then(res => {
         setCharacter(res.data.results);
-        console.log(res.data.results);
       })
       .catch(err => {
         console.log("You have encountered an error", err);
       });
-    // TODO: Add API Request here - must run in `useEffect`
-    //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
   }, []);
 
   return (
     <section className="character-list grid-view">
       {character.map(char => {
-        return <CharacterCard key={char.id} character={character} />;
+        return (
+          <CharacterCard
+            key={char.id}
+            name={char.name}
+            image={char.image}
+            species={char.species}
+          />
+        );
       })}
     </section>
   );
