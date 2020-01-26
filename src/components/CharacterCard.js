@@ -3,18 +3,32 @@ import styled from "styled-components";
 
 const Card = styled.div`
   border: 1px solid black;
-  width: 30%;
-  margin: 2%;
+  width: 0, auto;
+  margin: 1%
+  margin-top: 3%;
   min-height: 150px;
-  box-shadow: 10px 20px;
+  box-shadow: 10px 20px grey;
+`;
+
+const H1 = styled.h1`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+`;
+
+const H6 = styled.h6`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 2%;
 `;
 
 export default function CharacterCard(props) {
   return (
     <Card>
-      <h1>Name:{props.name}</h1>
+      <H1>{props.name}</H1>
       <img src={`${props.image}`} />
-      <div>{props.species}</div>
+      <H6>{props.species}</H6>
     </Card>
   );
 }

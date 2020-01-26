@@ -4,7 +4,6 @@ import CharacterCard from "./CharacterCard";
 export default function SearchForm({ onSearch, charName, setCharName }) {
   const handleChange = event => {
     setCharName(event.target.value);
-    console.log(charName);
   };
 
   return (
@@ -13,9 +12,9 @@ export default function SearchForm({ onSearch, charName, setCharName }) {
         <h3>Search Characters</h3>
         <input
           onChange={handleChange}
-          placeholder="name"
+          type="text"
           value={charName}
-          name="name"
+          placeholder="Search"
         />
       </label>
       <button type="submit">Submit</button>
