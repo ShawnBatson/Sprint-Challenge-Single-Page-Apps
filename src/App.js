@@ -11,22 +11,30 @@ import Navigation from "./components/Nav";
 
 export default function App() {
   const [name, setName] = useState("");
-  const [search, setSearch] = useState({});
+  const [search, setSearch] = useState([]);
 
-  const onSearch = charNameOne => {
+  // const onSearch = name => {
+  //   axios
+  //     .get(`https://rickandmortyapi.com/api/character/?name=${name}`)
+  //     .then(response => {
+  //       console.log(response.data.results);
+  //       setSearch(response.data.results);
+  //     })
+  //     .catch(err => {
+  //       console.log("You have encoutnered an error:", err);
+  //     });
+  // };
+
+  useEffect(() => {
     axios
-      .get(`https://rickandmortyapi.com/api/character/?name=${charNameOne}`)
+      .get(`https://rickandmortyapi.com/api/character/?name=${name}`)
       .then(response => {
         console.log(response.data.results);
-        setSearch(response.data.results.charNameOne);
+        setSearch(response.data.results);
       })
       .catch(err => {
         console.log("You have encoutnered an error:", err);
       });
-  };
-
-  useEffect(() => {
-    onSearch(name);
   }, [name]);
 
   return (
@@ -37,13 +45,13 @@ export default function App() {
         <Route exact path="/" component={WelcomePage} />
         <Route exact path="/characters" component={CharacterList} />
         <Route exact path="/locations" component={LocationsList} />
-        <CharacterList />
         <SearchForm
-          onSearch={onSearch}
+          // onSearch={onSearch}
           charName={name}
           setCharName={setName}
           search={search}
         />
+        <CharacterList filtered={search} />
       </div>
     </main>
   );

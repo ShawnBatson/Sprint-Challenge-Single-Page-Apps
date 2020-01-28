@@ -7,7 +7,7 @@ export default function SearchForm({ onSearch, charName, setCharName }) {
   };
 
   return (
-    <form onSubmit={() => onSearch(charName)}>
+    <form>
       <label>
         <h3>Search Characters</h3>
         <input
@@ -17,7 +17,7 @@ export default function SearchForm({ onSearch, charName, setCharName }) {
           placeholder="Search"
         />
       </label>
-      <button type="submit">Submit</button>
+      {/* <button type="submit">Submit</button> */}
     </form>
   );
 }
